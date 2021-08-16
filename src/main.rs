@@ -1,5 +1,8 @@
+use rudiosti::cli::opts;
 use rudiosti::io::read;
 
 fn main() {
-  let _ = read("data/example.wav");
+  let args = opts().get_matches();
+  let input = args.value_of("INPUT").unwrap();
+  let _ = read(input); // "data/example.wav"
 }
